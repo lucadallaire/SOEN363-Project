@@ -3,20 +3,16 @@ import pandas as pd
 import config
 
 
-bearer_token = config.bearer_token
-
 # authentication
 
-client = tweepy.Client(bearer_token)
+client = tweepy.Client(bearer_token=config.bearer_token)
 
-# search tweets
-query = "#fashion -is:retweet"
-tweets = client.search_recent_tweets(query=query, max_results=100)
-
+# search tweets and save to csv file
+query = "(fashion OR shoes OR designer) lang:en -is:retweet"
 
 columns = ['ID', 'Tweet']
 data = []
-for tweet in tweets.data:
+for tweet in tweepy.Paginator(client.search_recent_tweets, query=query, max_results=100).flatten(limit=1000):
     data.append([tweet.id, tweet.text])
 
 df = pd.DataFrame(data, columns=columns)
