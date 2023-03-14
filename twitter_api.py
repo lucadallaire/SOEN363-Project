@@ -8,7 +8,7 @@ import config
 client = tweepy.Client(bearer_token=config.bearer_token)
 
 # search tweets and save to csv file
-query = "(fashion OR shoes OR designer) lang:en -is:retweet"
+query = "(style OR fashion trends) lang:en -is:retweet"
 
 columns = ['ID', 'Tweet']
 data = []
