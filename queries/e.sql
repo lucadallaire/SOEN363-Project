@@ -1,3 +1,3 @@
-SELECT SUM(tweets.author_id), brand.tweet FROM tweets, brand 
-WHERE tweets.tweet = brand.tweet
-GROUP BY brand.tweet;
+SELECT SUM(tweets.author_id), brands.tweet FROM tweets, brands 
+WHERE tweets.tweet = brands.tweet
+GROUP BY brands.tweet;
