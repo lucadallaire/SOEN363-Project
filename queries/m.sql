@@ -1,4 +1,4 @@
-SELECT MAX(id), brand.description
+SELECT MAX(tweets.author_id), brand.tweet
 FROM tweets, brand
-WHERE id >= 10 AND brand.description = tweets.tweet 
-GROUP BY brand.description;
+WHERE tweets.author_id >= 10 AND brand.tweet = tweets.tweet 
+GROUP BY brand.tweet;
