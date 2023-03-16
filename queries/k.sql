@@ -1,4 +1,4 @@
 -- Retrieve the row that has the kth highest numerical value in a particular column. (k>5)
 SELECT  *
-FROM Tweets
-WHERE id = (SELECT MAX(id) FROM tweets) AND id > 5;
+FROM tweets
+WHERE author_id = (SELECT MAX(author_id) FROM tweets) AND author_id > 5;
