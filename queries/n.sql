@@ -1,3 +1,3 @@
-SELECT brand.description, style.description
-FROM tweets, brand, style
-WHERE tweets.tweet = brand.description AND brand.description = style.description;
+SELECT brand.author_id, color.author_id
+FROM tweets, brand, color
+WHERE tweets.author_id = brand.author_id AND brand.author_id = color.author_id;
