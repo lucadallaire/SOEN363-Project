@@ -1,4 +1,4 @@
-SELECT MAX(id), author_id
+SELECT MAX(author_id), id
 FROM tweets
-WHERE id >= 5
-GROUP BY author_id;
+WHERE author_id >= 5
+GROUP BY id;
